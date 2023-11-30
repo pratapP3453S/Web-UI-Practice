@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif; /* Set a default font */
+}
+
+main {
+  /* min-height: 100vh; Set minimum height to 100% of the viewport height */
+  width: 100%;
+  background-color: rgb(169, 169, 169);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainpage {
+  width: 100%;
+  /* max-width: 1100px; Set a maximum width for better readability on larger screens */
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.border {
+  padding: 20px;
+  width: 100%;
+  /* max-width: 1070px; */
+  border: 2px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 768px) {
+  .nameline, .detailline, .summery, .education, .date, .skills, .projects, .achievements, .hobbies {
+    width: 48%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .nameline, .detailline, .summery, .education, .date, .skills, .projects, .achievements, .hobbies {
+    width: 30%;
+  }
+}
+.nameline{ 
+  height: 300px;
+  width: 660px;
+  /* background-color: aqua; */
+  border-bottom: 2px solid black;
+}
+#phone, #github, #email{
+  font-size: 22px;
+}
+.detailline{
+  height: 300px;
+  width: 366px;
+  /* background-color: bisque; */
+  border-bottom: 2px solid black;
+}
+.personal-details-left,.personal-details-right{
+  padding-top: 40px;
+  padding-left: 23px;
+  font-size: 27px;
+}
+.personal-details-right{
+  padding-top: 60px;
+  padding-left: 80px;
+  font-size: 24px;
+}
+.summery{
+  padding-top: 19px;
+  height: 150px;
+  width: 1026px;
+  /* background-color: rgb(174, 174, 240); */
+  font-size: 24px;
+  border-bottom: 2px solid black;
+}
+.education{
+  height: 250px;
+  width: 850px;
+  /* background-color: aqua; */
+  font-size: 24px;
+  border-bottom: 2px solid black;
+}
+#education{
+  font-size: 27px;
+  padding-bottom: 7px;
+}
+.date{
+  padding-top: 92px;
+  height: 250px;
+  width: 176.8px;
+  /* background-color: pink; */
+  font-size: 20px;
+  text-align: end;
+  border-bottom: 2px solid black;
+}
+#skills{
+  font-size: 27px;
+  padding-bottom: 23px;
+}
+.skills{
+  height: 200px;
+  width: 1026px;
+  /* background-color: pink; */
+  border-bottom: 2px solid black;
+  font-size: 25px;
+}
+#skill1{
+  margin-left: 100px;
+  border: 2px solid black;
+  padding: 7px;
+}
+#skill{
+  margin-left: 20px;
+  border: 2px solid black;
+  padding: 7px;
+}
+#projects{
+  font-size: 27px;
+  padding-bottom: 7px;
+}
+.projects{
+  height: 160px;
+  width: 1026px;
+  /* background-color: pink; */
+  border-bottom: 2px solid black;
+  font-size: 25px;
+}
+#achievements{
+  font-size: 27px;
+  padding-bottom: 7px;
+}
+.achievements{
+  height: 120px;
+  width: 1026px;
+  /* background-color: pink; */
+  border-bottom: 2px solid black;
+  font-size: 25px;
+}
+#hobbies{
+  font-size: 27px;
+  padding-bottom: 23px;
+}
+.hobbies{
+  height: 110px;
+  width: 1026px;
+  /* background-color: pink; */
+  border-bottom: 2px solid black;
+  font-size: 25px;
+}
+#hobbie1{
+  margin-left: 100px;
+  border: 2px solid black;
+  padding: 7px;
+}
+#hobbie{
+  margin-left: 20px;
+  border: 2px solid black;
+  padding: 7px;
+}
+/* Add media query for smaller screens */
+/* @media only screen and (max-width: 768px) {
+  .nameline,
+  .detailline,
+  .summery,
+  .education,
+  .date,
+  .skills,
+  .projects,
+  .achievements,
+  .hobbies {
+    width: 100%; /* Make each section take up the full width on smaller screens 
+  }
+} */
+/* Add media queries for responsiveness */
+
+

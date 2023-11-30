@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.top_bar{
+  display: flex;
+  background-color: pink;
+  height: 80px;
+}
+
+#myntra_logo{
+  height: 43px;
+  width: 60px;
+  padding-left: 12px;
+  padding-top: 17px;
+
+}
+#myntra_logo:hover{
+  cursor: pointer;
+}
+
+.navigation_bar{
+  font-family: Bahnschrift semibold;
+  font-weight: bold;
+  font-size: small;
+  padding: 30px;
+}
+#men,#women,#kids,#homeAliving,#beauty,#studio{
+  padding-right: 30px;
+}
+#sup{
+  color: red;
+}
+a{
+  text-decoration: none;
+}
+#search_bar{
+  position: fixed;
+  height: 30px;
+  width: 476px;
+  margin-top: 22px;
+  
+}
