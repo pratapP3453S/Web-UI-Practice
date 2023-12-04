@@ -139,6 +139,52 @@ header{
 /* footer section ends */
 
 
+
+
+
+.topBanner{
+  margin: 46px 0;
+}
+.bannerImage{
+  width: 100%;
+  
+}
+.firstHeading , .secondHeading{
+  font-size: 30px;
+  font-weight: 700;
+  color: #535766;
+  letter-spacing: .1cm;
+  margin: 100px 30px 30px 30px;
+  line-height: 1.4;
+  text-align: center;
+  /* word-spacing: .21cm; */
+}
+.secondHeading{
+  margin: 30px 30px;
+}
+.brandsToBagContainer{
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: 15px 30px; */
+  justify-content: space-evenly;
+}
+.categories{
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: 30px 50px; */
+  justify-content: space-evenly;
+}
+.brandImage{
+  padding: 15px 20px;
+}
+.categoryImage{
+  padding: 15px 40px;
+}
+
+
+
+
+
 /* main section begins */
 
 .itemsContainer{
@@ -429,5 +475,6 @@ header{
     justify-content: center;
     align-items: end;
     position: relative;
-  }
-} */
+    }
+  } */
+}

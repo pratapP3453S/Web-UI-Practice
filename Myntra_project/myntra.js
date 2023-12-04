@@ -1,7 +1,7 @@
 let bagItemsObjects;
 const myntra_items = [
   {
-    id:"1",
+    id: "1",
     itemImage: "images/1.jpg",
     rating: {
       stars: 4.3,
@@ -9,7 +9,7 @@ const myntra_items = [
     },
     companyName: "Carlton London",
     itemName: "Rhodium-Plated CZ Floral Studs",
-    returnPeriod:"14 days",
+    returnPeriod: "14 days",
     deliveryDate: "4 Dec 2023",
     price: {
       currentPrice: 606,
@@ -18,7 +18,7 @@ const myntra_items = [
     }
   },
   {
-    id:"2",
+    id: "2",
     itemImage: "images/2.jpg",
     rating: {
       stars: 4.1,
@@ -26,7 +26,7 @@ const myntra_items = [
     },
     companyName: "Nike",
     itemName: "Air Max 270 Sneakers",
-    returnPeriod:"14 days",
+    returnPeriod: "14 days",
     deliveryDate: "4 Dec 2023",
     price: {
       currentPrice: 1800,
@@ -35,7 +35,7 @@ const myntra_items = [
     }
   },
   {
-    id:"3",
+    id: "3",
     itemImage: "images/3.jpg",
     rating: {
       stars: 3.9,
@@ -43,7 +43,7 @@ const myntra_items = [
     },
     companyName: "Zara",
     itemName: "Striped Linen Shirt Dress",
-    returnPeriod:"14 days",
+    returnPeriod: "14 days",
     deliveryDate: "4 Dec 2023",
     price: {
       currentPrice: 1606,
@@ -52,7 +52,7 @@ const myntra_items = [
     }
   },
   {
-    id:"4",
+    id: "4",
     itemImage: "images/4.jpg",
     rating: {
       stars: 4.2,
@@ -60,7 +60,7 @@ const myntra_items = [
     },
     companyName: "H&M",
     itemName: "Skinny High Ankle Jeans",
-    returnPeriod:"14 days",
+    returnPeriod: "14 days",
     deliveryDate: "4 Dec 2023",
     price: {
       currentPrice: 899,
@@ -69,7 +69,7 @@ const myntra_items = [
     }
   },
   {
-    id:"5",
+    id: "5",
     itemImage: "images/5.jpg",
     rating: {
       stars: 3.5,
@@ -77,7 +77,7 @@ const myntra_items = [
     },
     companyName: "Gucci",
     itemName: "GG Marmont Matelassé Shoulder Bag",
-    returnPeriod:"14 days",
+    returnPeriod: "14 days",
     deliveryDate: "4 Dec 2023",
     price: {
       currentPrice: 4500,
@@ -86,7 +86,7 @@ const myntra_items = [
     }
   },
   {
-    id:"6",
+    id: "6",
     itemImage: "images/6.jpg",
     rating: {
       stars: 4.1,
@@ -94,7 +94,7 @@ const myntra_items = [
     },
     companyName: "Levi's",
     itemName: "501 Original Fit Jeans",
-    returnPeriod:"14 days",
+    returnPeriod: "14 days",
     deliveryDate: "4 Dec 2023",
     price: {
       currentPrice: 3999,
@@ -103,7 +103,7 @@ const myntra_items = [
     }
   },
   {
-    id:"7",
+    id: "7",
     itemImage: "images/7.jpg",
     rating: {
       stars: 4.8,
@@ -111,7 +111,7 @@ const myntra_items = [
     },
     companyName: "Adidas",
     itemName: "Ultraboost 21 Running Shoes",
-    returnPeriod:"14 days",
+    returnPeriod: "14 days",
     deliveryDate: "4 Dec 2023",
     price: {
       currentPrice: 499,
@@ -120,7 +120,7 @@ const myntra_items = [
     }
   },
   {
-    id:"8",
+    id: "8",
     itemImage: "images/8.jpg",
     rating: {
       stars: 3.6,
@@ -128,7 +128,7 @@ const myntra_items = [
     },
     companyName: "Chanel",
     itemName: "Classic Flap Bag",
-    returnPeriod:"14 days",
+    returnPeriod: "14 days",
     deliveryDate: "4 Dec 2023",
     price: {
       currentPrice: 20999,
@@ -137,7 +137,7 @@ const myntra_items = [
     }
   },
   {
-    id:"9",
+    id: "9",
     itemImage: "images/4.jpg",
     rating: {
       stars: 4.4,
@@ -145,7 +145,7 @@ const myntra_items = [
     },
     companyName: "Uniqlo",
     itemName: "Heattech Turtleneck Sweater",
-    returnPeriod:"14 days",
+    returnPeriod: "14 days",
     deliveryDate: "4 Dec 2023",
     price: {
       currentPrice: 6062,
@@ -154,7 +154,7 @@ const myntra_items = [
     }
   },
   {
-    id:"10",
+    id: "10",
     itemImage: "images/1.jpg",
     rating: {
       stars: 4.3,
@@ -162,7 +162,7 @@ const myntra_items = [
     },
     companyName: " Ralph Lauren",
     itemName: "Polo Ralph Lauren Oxford Shirt",
-    returnPeriod:"14 days",
+    returnPeriod: "14 days",
     deliveryDate: "4 Dec 2023",
     price: {
       currentPrice: 4606,
@@ -175,9 +175,9 @@ let bagItems;
 
 whenPageLoad();
 
-function whenPageLoad(){
+function whenPageLoad() {
   let bagItemString = localStorage.getItem('bagItems');
-  bagItems = bagItemString ? JSON.parse(bagItemString) : []; 
+  bagItems = bagItemString ? JSON.parse(bagItemString) : [];
   displayAllProducts();
   displayBagItemIconCount();
   loadBagItemObjects();
@@ -187,34 +187,34 @@ function whenPageLoad(){
 }
 
 
-function addToBag(itemsId){
+function addToBag(itemsId) {
   bagItems.push(itemsId);
-  localStorage.setItem('bagItems',JSON.stringify(bagItems));
+  localStorage.setItem('bagItems', JSON.stringify(bagItems));
   displayBagItemIconCount();
 }
 
-function displayBagItemIconCount(){
+function displayBagItemIconCount() {
   let bagIconCount = document.querySelector('.itemCountBag');
-  if(bagItems.length > 0){
+  if (bagItems.length > 0) {
     bagIconCount.style.visibility = 'visible';
     bagIconCount.innerHTML = bagItems.length;
   }
-  else{
+  else {
     bagIconCount.style.visibility = 'hidden';
   }
 }
 
 
 
-function displayAllProducts(){
-let itemsContainerElement = document.querySelector('.itemsContainer');
-if(!itemsContainerElement){
-  return;
-}
+function displayAllProducts() {
+  let itemsContainerElement = document.querySelector('.itemsContainer');
+  if (!itemsContainerElement) {
+    return;
+  }
 
-let innerHtml =  ``;
-myntra_items.forEach(items => {
-  innerHtml +=`
+  let innerHtml = ``;
+  myntra_items.forEach(items => {
+    innerHtml += `
   <div class="itemContainer">
   <img class="itemImage" src=${items.itemImage} alt="item image">
   <div class="rating">${items.rating.stars} ⭐ | ${items.rating.reviews} reviews</div>
@@ -228,51 +228,26 @@ myntra_items.forEach(items => {
   <button class="addBagButton" onclick="addToBag(${items.id});">Add to Bag</button>
   </div>
   `;
-})
-itemsContainerElement.innerHTML = innerHtml;
+  })
+  itemsContainerElement.innerHTML = innerHtml;
 }
 
-
-
-// function onBagLoad(){
-//   let bagItemString = localStorage.getItem('bagItems');
-//   bagItems = bagItemString ? JSON.parse(bagItemString) : []; 
-//   displayCountItems();
-//   getBagItem();
-// }
-
-// function displayCountItems(){
-//   let bagIconCount = document.querySelector('itemCountBag');
-//   if(bagItems.length > 0){
-//     bagIconCount.innerHTML = bagItems.length;
-//     bagIconCount.style.visibility = 'visible';
-//   }
-//   else{
-//     bagIconCount.style.visibility = 'hidden';
-//   }
-// }
-
-// function looping{
-//   for(let i=0; i>myntra_items.length ; i++){
-  
-// }
-
-function loadBagItemObjects(){
+function loadBagItemObjects() {
   bagItemsObjects = bagItems.map(itemId => {
-    for(let i=0; i<myntra_items.length ; i++){
-      if(itemId == myntra_items[i].id){
+    for (let i = 0; i < myntra_items.length; i++) {
+      if (itemId == myntra_items[i].id) {
         return myntra_items[i];
       }
     }
   });
   console.log(bagItemsObjects);
-  
+
 }
 
 
-function cancelItem(itemId){
+function cancelItem(itemId) {
   bagItems = bagItems.filter(cancelId => cancelId != itemId);
-  localStorage.setItem('bagItems',JSON.stringify(bagItems));
+  localStorage.setItem('bagItems', JSON.stringify(bagItems));
   loadBagItemObjects();
   displayBagItemIconCount();
   getBagItem();
@@ -281,11 +256,11 @@ function cancelItem(itemId){
 
 
 
-function getBagItem(){
+function getBagItem() {
   console.log(bagItems);
   console.log(myntra_items.length);
   let bagContainer = document.querySelector('.bagItemContainer');
-  if(!bagContainer){
+  if (!bagContainer) {
     return;
   }
   let innerhtml = ``;
@@ -312,7 +287,7 @@ function getBagItem(){
         </div>
         <div class="deliveryDetails">
           <span class="deliveryBy">Delivery by</span>
-          <span class="deliveryDate">${itemObj.deliveryDatObj}</span>
+          <span class="deliveryDate">${itemObj.deliveryDate}</span>
         </div>
       </div>
       <div class="crossButtonContainer">
@@ -321,17 +296,20 @@ function getBagItem(){
     </div>
 `;
   })
-  
 
-    //  <div class="bagItemContainer">
-          // </div>
+
+  //  <div class="bagItemContainer">
+  // </div>
   bagContainer.innerHTML = innerhtml;
 }
 
 
-function totalPriceList(totalItem){
+function totalPriceList(totalItem) {
   // displayBagItemIconCount();
   let bagItemPrice = document.querySelector('.bagItemPriceContainer');
+  if(!bagItemPrice){
+    return;
+  }
   let MRP = 0;
   // let discountPercent = 0;
   let discountedPrice = 0;
