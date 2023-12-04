@@ -3,27 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>myntra.com</title>
+  <title>Myntra Clone</title>
   <link rel="stylesheet" href="myntra.css">
-  <link rel="icon" href="./images/myntra_logo.webp">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-  <main>
-    <header>
-      <div class="top_bar">
-        <span><img src="./images/myntra_logo.webp" alt="myntra logo" id="myntra_logo"></span>
-        <nav class="navigation_bar">
-          <span id="men"><a href="#">MEN</a></span>
-          <span id="women"><a href="#">WOMEN</a></span>
-          <span id="kids"><a href="#">KIDS</a></span>
-          <span id="homeAliving"><a href="#">HOME & LIVING</a></span>
-          <span id="beauty"><a href="#">BEAUTY</a></span>
-          <span id="studio"><a href="#">STUDIO <sup id="sup">NEW</sup></a></span>
-        </nav>
-        <span><input type="text" placeholder="   Search for products, brands and more" id="search_bar"></span>
+  <header>
+    <div class="logoContainer">
+      <a href="#">
+        <img src="./images/myntra_logo.webp" alt="myntra logo" class="myntraLogo">
+      </a>
+    </div>
+    <div class="navBar">
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">Kids</a>
+      <a href="#">Home & Living</a>
+      <a href="#">Beauty</a>
+      <a href="#">Studio<sup>New</sup></a>
+    </div>
+    <div class="searchBar">
+      <span class="material-symbols-outlined searchIcon">
+        search
+        </span>
+        <input placeholder="Search for products, brands and more" class="searchArea">
+    </div>
+    <div class="actionBar">
+      <div class="actionContainer">
+        <span class="material-symbols-outlined">person</span>  
+        <span class="actionName">Profile</span>   
       </div>
-    </header>
+      <div class="actionContainer">
+        <span class="material-symbols-outlined">favorite</span>
+        <span class="actionName">Wishlist</span>
+      </div>
+      <a class="actionContainer actionBagLink" href="myntra_Bag.html">
+        <span class="material-symbols-outlined">shopping_bag</span>
+        <span class="actionName">Bag</span>
+        <span class="itemCountBag">0</span>
+      </a>
+    </div>
+  </header>
+  <main>
+    <div class="itemsContainer">
+
+    </div>
   </main>
+  <footer>
+    <div class="footerListContainer">
+      <div class="allLinks">
+        <h5>ONLINE SHOPPING</h5>
+
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+        <a href="#">Home & Living</a>
+        <a href="#">Beauty</a>
+        <a href="#">Gift Card</a>
+        <a href="#">Myntra Insider</a>
+      </div>
+
+      <div class="allLinks">
+        <h5>ONLINE SHOPPING</h5>
+
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+        <a href="#">Home & Living</a>
+        <a href="#">Beauty</a>
+        <a href="#">Gift Card</a>
+        <a href="#">Myntra Insider</a>
+      </div>
+
+      <div class="allLinks">
+        <h5>ONLINE SHOPPING</h5>
+
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+        <a href="#">Home & Living</a>
+        <a href="#">Beauty</a>
+        <a href="#">Gift Card</a>
+        <a href="#">Myntra Insider</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2023 www.myntra.com. All rights reserved.
+    </div>
+  </footer>
   <script src="myntra.js"></script>
+  <!-- <script src="myntra_bag.js"></script> -->
+  <!-- <script src="myntra_items.js"></script> -->
 </body>
 </html>
