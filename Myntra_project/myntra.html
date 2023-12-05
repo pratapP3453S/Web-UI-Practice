@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Myntra Clone</title>
+  <title>Myntra Clone - Shop All Types Of Garments Here</title>
   <link rel="stylesheet" href="myntra.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="shortcut icon" href="images/myntra_logo.webp" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 </head>
+
 <body>
   <header>
     <div class="logoContainer">
@@ -27,13 +31,13 @@
     <div class="searchBar">
       <span class="material-symbols-outlined searchIcon">
         search
-        </span>
-        <input placeholder="Search for products, brands and more" class="searchArea">
+      </span>
+      <input placeholder="Search for products, brands and more" class="searchArea">
     </div>
     <div class="actionBar">
       <div class="actionContainer">
-        <span class="material-symbols-outlined">person</span>  
-        <span class="actionName">Profile</span>   
+        <span class="material-symbols-outlined">person</span>
+        <span class="actionName">Profile</span>
       </div>
       <div class="actionContainer">
         <span class="material-symbols-outlined">favorite</span>
@@ -48,9 +52,28 @@
   </header>
   <main>
     <div class="topBanner">
-      <a class="bannerLink" href="shopping.html">
-        <img class="bannerImage" src="./imageCss/banner.jpg" alt="Banner Image">
-      </a>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><a href="shopping.html"><img src="./imageCss/BannerImages/1stBanner.webp"
+                alt="Banner Image"></a></div>
+          <div class="swiper-slide"><a href="shopping.html"><img src="./imageCss/BannerImages/2ndBanner.webp"
+                alt="Banner Image"></a></div>
+          <div class="swiper-slide"><a href="shopping.html"><img src="./imageCss/BannerImages/3rdBanner.webp"
+                alt="Banner Image"></a></div>
+          <div class="swiper-slide"><a href="shopping.html"><img src="./imageCss/BannerImages/4thBanner.webp"
+                alt="Banner Image"></a></div>
+          <div class="swiper-slide"><a href="shopping.html"><img src="./imageCss/BannerImages/5thBanner.webp"
+                alt="Banner Image"></a></div>
+          <div class="swiper-slide"><a href="shopping.html"><img src="./imageCss/BannerImages/6thBanner.webp"
+                alt="Banner Image"></a></div>
+          <div class="swiper-slide"><a href="shopping.html"><img src="./imageCss/BannerImages/7thBanner.webp"
+                alt="Banner Image"></a></div>
+          <div class="swiper-slide"><a href="shopping.html"><img src="./imageCss/BannerImages/8thBanner.webp"
+                alt="Banner Image"></a></div>        
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
     <div class="firstHeading">MEDAL WORTHY BRANDS TO BAG</div>
     <div class="brandsToBagContainer">
@@ -129,7 +152,25 @@
     </div>
   </footer>
   <script src="myntra.js"></script>
-  <!-- <script src="myntra_bag.js"></script> -->
-  <!-- <script src="myntra_items.js"></script> -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      autoplay: {
+        delay: 2000,
+        // disableOnInteraction: true,
+      },
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
 </body>
+
 </html>

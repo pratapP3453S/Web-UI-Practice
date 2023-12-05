@@ -175,6 +175,7 @@ let bagItems;
 
 whenPageLoad();
 
+//When page reload any page reload
 function whenPageLoad() {
   let bagItemString = localStorage.getItem('bagItems');
   bagItems = bagItemString ? JSON.parse(bagItemString) : [];
@@ -183,16 +184,18 @@ function whenPageLoad() {
   loadBagItemObjects();
   getBagItem();
   totalPriceList(bagItems.length);
-
 }
 
 
+
+//Saving items in web storage 
 function addToBag(itemsId) {
   bagItems.push(itemsId);
   localStorage.setItem('bagItems', JSON.stringify(bagItems));
   displayBagItemIconCount();
 }
 
+//Updating bag's item number available in bag.........for header(navigation bar/bag icon)
 function displayBagItemIconCount() {
   let bagIconCount = document.querySelector('.itemCountBag');
   if (bagItems.length > 0) {
@@ -206,12 +209,12 @@ function displayBagItemIconCount() {
 
 
 
+//Displaying all products for purchase and adding items to bag.........file : shopping.html
 function displayAllProducts() {
   let itemsContainerElement = document.querySelector('.itemsContainer');
   if (!itemsContainerElement) {
     return;
   }
-
   let innerHtml = ``;
   myntra_items.forEach(items => {
     innerHtml += `
@@ -221,8 +224,8 @@ function displayAllProducts() {
   <div class="companyName">${items.companyName}</div>
   <div class="itemName">${items.itemName}</div>
   <div class="price">
-    <span class="currentPrice">${items.price.currentPrice}</span>
-    <span class="originalPrice">${items.price.originalPrice}</span>
+    <span class="currentPrice">₹${items.price.currentPrice}</span>
+    <span class="originalPrice">₹${items.price.originalPrice}</span>
     <span class="discount">(${items.price.discount}% OFF)</span>
   </div>
   <button class="addBagButton" onclick="addToBag(${items.id});">Add to Bag</button>
@@ -232,6 +235,9 @@ function displayAllProducts() {
   itemsContainerElement.innerHTML = innerHtml;
 }
 
+
+
+//loading items in variable(bagItemObjects) selected from shopping 
 function loadBagItemObjects() {
   bagItemsObjects = bagItems.map(itemId => {
     for (let i = 0; i < myntra_items.length; i++) {
@@ -240,11 +246,11 @@ function loadBagItemObjects() {
       }
     }
   });
-  console.log(bagItemsObjects);
-
 }
 
 
+
+//removing items from web storage and website(myntra_Bag.html)
 function cancelItem(itemId) {
   bagItems = bagItems.filter(cancelId => cancelId != itemId);
   localStorage.setItem('bagItems', JSON.stringify(bagItems));
@@ -256,6 +262,8 @@ function cancelItem(itemId) {
 
 
 
+
+// adding item to website(myntra_Bag.html)
 function getBagItem() {
   console.log(bagItems);
   console.log(myntra_items.length);
@@ -264,10 +272,7 @@ function getBagItem() {
     return;
   }
   let innerhtml = ``;
-  // let discountPercent = 0;
-  // let percent = 0;
   bagItemsObjects.forEach(itemObj => {
-    // discountPercent = parseInt(itemObj.price.originalPrice) - parseInt(itemObj.price.currentPrice);
     innerhtml += `
     <div class="bagItemBorder">
       <div class="imageHolder">
@@ -277,8 +282,8 @@ function getBagItem() {
         <div class="companyName">${itemObj.companyName}</div>
         <div class="itemName">${itemObj.itemName}</div>
         <div class="price">
-          <span class="currentPrice">${itemObj.price.currentPrice}</span>
-          <span class="originalPrice">${itemObj.price.originalPrice}</span>
+          <span class="currentPrice">₹${itemObj.price.currentPrice}</span>
+          <span class="originalPrice">₹${itemObj.price.originalPrice}</span>
           <span class="discount">(${itemObj.price.discount}% OFF)</span>
         </div>
         <div class="returnAvailable">
@@ -296,31 +301,32 @@ function getBagItem() {
     </div>
 `;
   })
-
-
-  //  <div class="bagItemContainer">
-  // </div>
   bagContainer.innerHTML = innerhtml;
 }
 
 
+
+//calculating all selected items price and rendering on website(myntra_Bag.html) 
 function totalPriceList(totalItem) {
-  // displayBagItemIconCount();
   let bagItemPrice = document.querySelector('.bagItemPriceContainer');
   if(!bagItemPrice){
     return;
   }
   let MRP = 0;
-  // let discountPercent = 0;
   let discountedPrice = 0;
   let finalPrice = 0;
-  let convenienceAddon = 99;
+  let convenienceAddon = 0;
   bagItemsObjects.forEach(itemPrice => {
     MRP += parseInt(itemPrice.price.originalPrice);
     discountedPrice += parseInt(itemPrice.price.originalPrice) - parseInt(itemPrice.price.currentPrice);
-    // discountPercent = parseInt(itemPrice.price.originalPrice) - parseInt(itemPrice.price.currentPrice);
     finalPrice += parseInt(itemPrice.price.currentPrice);
   })
+  if(finalPrice == 0){
+    convenienceAddon = 0;
+  }
+  else{
+    convenienceAddon = 99;
+  }
   finalPrice += convenienceAddon;
   bagItemPrice.innerHTML = `
   <div class="placeOrderDiv">
