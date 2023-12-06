@@ -4,48 +4,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Myntra Clone - Shop All Types Of Garments Here</title>
+  <title>Kharidle - Shop All Types Of Garments Here</title>
   <link rel="stylesheet" href="myntra.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="shortcut icon" href="images/myntra_logo.webp" type="image/x-icon">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-</head> 
+</head>
 
 <body>
   <header>
+    <div class="containsMenuIcon">
+      <a href="#" class="menuBar" onclick="showSideBar();"><svg xmlns="http://www.w3.org/2000/svg" height="45"viewBox="0 -960 960 960" width="45"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" /></svg></a>
+    </div>
     <div class="logoContainer">
-      <a href="#" class="menuBar" onclick="showSideBar()"><svg xmlns="http://www.w3.org/2000/svg" height="47" viewBox="0 -960 960 960" width="29"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
-      <a href="myntra.html">
-        <img src="./images/myntra_logo.webp" alt="myntra logo" class="myntraLogo">
-      </a>
+      <!-- <div class="containsMenuIcon">
+        <a href="#" class="menuBar" onclick="showSideBar()"><svg xmlns="http://www.w3.org/2000/svg" height="45"
+          viewBox="0 -960 960 960" width="45">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg></a>
+      </div> -->
+      <div class="containsLogo">
+        <a href="#">
+          <img src="./images/myntra_logo.webp" alt="myntra logo" class="myntraLogo ">
+        </a>
+      </div>
     </div>
     <div class="sideBar">
-      <a href="#" class="menuBar" onclick="closeSideBar()"><svg xmlns="http://www.w3.org/2000/svg" height="27" viewBox="0 -960 960 960" width="27"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
-      <a href="#">Men</a>
-      <a href="#">Women</a>
-      <a href="#">Kids</a>
-      <a href="#">Home & Living</a>
-      <a href="#">Beauty</a>
-      <a href="#">Studio<sup>New</sup></a>
-
+      <div class="closeMenuIcon">
+        <a href="#" class="menuBar" onclick="closeSideBar();"><svg xmlns="http://www.w3.org/2000/svg" height="40"
+          viewBox="0 -960 960 960" width="73">
+          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+        </svg></a>
+      </div>
+      <div class="actionMenus">
+        <div class="actionContainerMenu1">
+          <span class="material-symbols-outlined">person</span>
+          <span class="actionName">Profile</span>
+        </div>
+        <div class="actionContainerMenu2">
+          <span class="material-symbols-outlined">favorite</span>
+          <span class="actionName">Wishlist</span>
+        </div>
+        <div class="actionContainerMenu3">
+          <a class="actionContainer actionBagLink" href="myntra_Bag.html">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            <span class="actionName">Bag</span>
+            <span class="itemCountBagMenu">0</span>
+          </a>
+        </div>
+      </div>
+      <div class="menus">
+        <ul class="sideBarNavUL">
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">Kids</a></li>
+          <li><a href="#">Home & Living</a></li>
+          <li><a href="#">Beauty</a></li>
+          <li><a href="#">Studio<sup style="color: #ff3f6c;">New</sup></a></li>
+        </ul>
+      </div>
     </div>
     <div class="navBar">
-
       <a href="#">Men</a>
       <a href="#">Women</a>
       <a href="#">Kids</a>
       <a href="#">Home & Living</a>
       <a href="#">Beauty</a>
       <a href="#">Studio<sup>New</sup></a>
-
     </div>
     <div class="searchBar">
       <span class="material-symbols-outlined searchIcon">
         search
       </span>
       <input placeholder="Search for products, brands and more" class="searchArea">
+    </div>
+    <div class="logoOnSmallScreen">
+      <div class="containsLogo">
+        <a href="#">
+          <img src="./images/myntra_logo.webp" alt="myntra logo" class="myntraLogo">
+        </a>
+      </div>
     </div>
     <div class="actionBar">
       <div class="actionContainer">
@@ -88,7 +128,7 @@
           <div class="swiper-slide"><a href="shopping.html"><img src="./imageCss/BannerImages/7thBanner.webp"
                 alt="Banner Image"></a></div>
           <div class="swiper-slide"><a href="shopping.html"><img src="./imageCss/BannerImages/8thBanner.webp"
-                alt="Banner Image"></a></div>        
+                alt="Banner Image"></a></div>
         </div>
         <!-- <div class="swiper-pagination"></div> -->
       </div>
@@ -184,4 +224,5 @@
     });
   </script>
 </body>
+
 </html>
