@@ -353,3 +353,14 @@ function totalPriceList(totalItem) {
   `;
 }
 
+
+//sidebar or menu bar button for mobile or small screen devices
+function showSideBar(){
+  const openSideBar = document.querySelector('.sideBar');
+  openSideBar.style.display = "flex";
+}
+function closeSideBar(){
+  const openSideBar = document.querySelector('.sideBar');
+  openSideBar.style.display = "none";
+}
+
