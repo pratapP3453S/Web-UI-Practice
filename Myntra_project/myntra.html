@@ -16,17 +16,30 @@
 <body>
   <header>
     <div class="logoContainer">
+      <a href="#" class="menuBar" onclick="showSideBar()"><svg xmlns="http://www.w3.org/2000/svg" height="47" viewBox="0 -960 960 960" width="29"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
       <a href="#">
         <img src="./images/myntra_logo.webp" alt="myntra logo" class="myntraLogo">
       </a>
     </div>
-    <div class="navBar">
+    <div class="sideBar">
+      <a href="#" class="menuBar" onclick="closeSideBar()"><svg xmlns="http://www.w3.org/2000/svg" height="27" viewBox="0 -960 960 960" width="27"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
       <a href="#">Men</a>
       <a href="#">Women</a>
       <a href="#">Kids</a>
       <a href="#">Home & Living</a>
       <a href="#">Beauty</a>
       <a href="#">Studio<sup>New</sup></a>
+
+    </div>
+    <div class="navBar">
+
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">Kids</a>
+      <a href="#">Home & Living</a>
+      <a href="#">Beauty</a>
+      <a href="#">Studio<sup>New</sup></a>
+
     </div>
     <div class="searchBar">
       <span class="material-symbols-outlined searchIcon">
@@ -52,6 +65,11 @@
   </header>
   <main>
     <div class="topBanner">
+      <div class="bannerPhoto">
+        <a href="#">
+          <img class="bannerImage" src="./imageCss/BannerImages/1stBanner.webp" alt="hello">
+        </a>
+      </div>
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <!-- Slides -->
@@ -72,7 +90,7 @@
           <div class="swiper-slide"><a href="shopping.html"><img src="./imageCss/BannerImages/8thBanner.webp"
                 alt="Banner Image"></a></div>        
         </div>
-        <div class="swiper-pagination"></div>
+        <!-- <div class="swiper-pagination"></div> -->
       </div>
     </div>
     <div class="firstHeading">MEDAL WORTHY BRANDS TO BAG</div>
@@ -156,21 +174,24 @@
   <script>
     const swiper = new Swiper('.swiper-container', {
       autoplay: {
-        delay: 2000,
-        // disableOnInteraction: true,
+        delay: 3000,
       },
-      // Optional parameters
-      direction: 'horizontal',
       loop: true,
-
-
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   clickable: true,
+      // },
     });
   </script>
+  <script>
+    function showSideBar(){
+      const openSideBar = document.querySelector('.sideBar');
+      openSideBar.style.display = "flex";
+    }
+    function closeSideBar(){
+      const openSideBar = document.querySelector('.sideBar');
+      openSideBar.style.display = "none";
+    }
+  </script>
 </body>
-
 </html>
