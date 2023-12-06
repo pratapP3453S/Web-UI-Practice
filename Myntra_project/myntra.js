@@ -182,6 +182,7 @@ function whenPageLoad() {
 
   displayAllProducts();
   displayBagItemIconCount();
+  displayBagItemIconCountMobile();
   loadBagItemObjects();
   getBagItem();
   totalPriceList(bagItems.length);
@@ -194,11 +195,22 @@ function addToBag(itemsId) {
   bagItems.push(itemsId);
   localStorage.setItem('bagItems', JSON.stringify(bagItems));
   displayBagItemIconCount();
+  displayBagItemIconCountMobile();
 }
 
 //Updating bag's item number available in bag.........for header(navigation bar/bag icon)
 function displayBagItemIconCount() {
   let bagIconCount = document.querySelector('.itemCountBag');
+  if (bagItems.length > 0) {
+    bagIconCount.style.visibility = 'visible';
+    bagIconCount.innerHTML = bagItems.length;
+  }
+  else {
+    bagIconCount.style.visibility = 'hidden';
+  }
+}
+function displayBagItemIconCountMobile() {
+  let bagIconCount = document.querySelector('.itemCountBagMenu');
   if (bagItems.length > 0) {
     bagIconCount.style.visibility = 'visible';
     bagIconCount.innerHTML = bagItems.length;
@@ -257,6 +269,7 @@ function cancelItem(itemId) {
   localStorage.setItem('bagItems', JSON.stringify(bagItems));
   loadBagItemObjects();
   displayBagItemIconCount();
+  displayBagItemIconCountMobile();
   getBagItem();
   totalPriceList(bagItems.length);
 }
@@ -360,7 +373,8 @@ function showSideBar(){
   const openSideBar = document.querySelector('.sideBar');
   openSideBar.style.display = "flex";
   // openSideBar.style.transitionDuration = "4s"
-  displayBagItemIconCount();
+  displayBagItemIconCountMobile();
+  // whenPageLoad();
   
 }
 
@@ -368,6 +382,7 @@ function closeSideBar(){
   const hideSideBar = document.querySelector('.sideBar');
   hideSideBar.style.display = "none";
   // hideSideBar.style.transitionDuration = "4s"
-  displayBagItemIconCount();
+  displayBagItemIconCountMobile();;
+  // whenPageLoad();
 }
 
