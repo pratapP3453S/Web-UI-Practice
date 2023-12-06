@@ -81,7 +81,7 @@ header{
   background-color: #f5f5f6;
   border: 0;
   width: 100%;
-  flex: 1;
+  /* flex: 1; */
   height: 40px;
   border-radius: 0 4px 4px 0;
   text-overflow: ellipsis;
@@ -119,6 +119,9 @@ header{
   margin-top: 19px;
 }
 
+
+
+
  .sideBar{
   position: fixed;
   top: 0;
@@ -131,21 +134,20 @@ header{
   box-shadow: 11px 0 10px rgba(0,0,0,0.1);
   display: none;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
   justify-content: start;
-  transition: sideBar;
-  transition-duration: 1s;
+
+  padding-right: 30px;
+  padding-top: 30px;
 }
 .sideBar a{
   width: 100%;
   text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
   backdrop-filter: blur(10px);
+  border: none;
   padding: 15px 0;
   color: black;
+
   font-size: 16px;
   text-transform: uppercase;
   font-weight: 700;
@@ -155,23 +157,128 @@ header{
   background-color: #f5f5f6;
 }
 .menuBar{
-  display: none;
+  display: flex;
   padding-right: 12px;
 }
+
+.sideBarNavUL li{
+  list-style-type: none;
+}
+
+.closeIconMenu, .menus{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.sideBarNavUL li{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: end;
+}
+.actionMenus{
+  display: none;
+  justify-content: space-between;
+
+}
+.actionContainerMenu3{
+  display: none;
+  background-color: none;
+  position:relative;
+  top: -33px;
+  padding-left: 20px;
+}
+.actionContainerMenu2, .actionContainerMenu1{
+  display: none;
+  flex-direction: column;
+
+  align-items: center;
+  padding-left: 20px;
+}
+.logoOnSmallScreen{
+  margin-right: 2%;
+  display: none;
+}
+.containsMenuIcon{
+  display: none;
+  margin-left: 2.8%;
+}
+
 @media (max-width: 1454px) {
   .navBar{
     display: none;
   }
-
+  
   .menuBar{
     display: block;
   }
-
+  .searchArea{
+    flex: 1;
+  }
+  .searchArea{
+    flex-grow: 1;
+  }
   .swiper-container{
     display: none;
   }
+  .containsMenuIcon{
+    display: flex;
+  }
+  .actionMenus{
+    display: none;
+  }
 }
+@media (max-width: 510px){
+  .actionBar{
+    display: none;
+  }
+  .logoContainer{
+    display: none;
+  }
+  .logoOnSmallScreen{
+    display: flex;
+    padding: 0 20px;
+  }
+  .myntraLogo{
+    height: 40px;
+  }
+  .containsMenuIcon{
+    display: flex;
+  }
+  .actionMenus, .actionContainerMenu1, .actionContainerMenu2, .actionContainerMenu3{
+    display: flex;
+  }
 
+}
+@media (max-width: 768px){
+  .searchBar{
+    display: flex;
+    /* align-items: center; */
+    justify-content: flex-start;
+    margin: 0 90px;
+    width: 30%;
+    min-width: 200px;
+  }
+  
+  .searchIcon{
+    box-sizing: content-box;
+    background-color: #f5f5f6;
+    height: 20px;
+    padding: 10px;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .searchArea{
+    color: #696e79;
+    background-color: #f5f5f6;
+    border: 0;
+    width: 100%;
+    /* flex: 1; */
+    height: 40px;
+    border-radius: 0 4px 4px 0;
+    text-overflow: ellipsis;
+  }
+}
 
 
 
@@ -651,42 +758,3 @@ header{
     width: 70%;
   }
 }
-
-/* Sidebar Styles */
-.sideBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 80%; /* Adjust width for smaller screens */
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 999;
-  backdrop-filter: blur(10px);
-  box-shadow: 11px 0 10px rgba(0, 0, 0, 0.1);
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  transition: sideBar;
-  transition-duration: 1s;
-}
-
-/* Add responsive styles for smaller screens */
-@media (max-width: 768px) {
-  .sideBar {
-    width: 40%; 
-  }
-}
-
-@media (max-width: 768px) {
-  .footerListContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .allLinks {
-    margin-bottom: 20px;
-  }
-}
-
-

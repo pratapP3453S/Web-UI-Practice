@@ -179,6 +179,7 @@ whenPageLoad();
 function whenPageLoad() {
   let bagItemString = localStorage.getItem('bagItems');
   bagItems = bagItemString ? JSON.parse(bagItemString) : [];
+
   displayAllProducts();
   displayBagItemIconCount();
   loadBagItemObjects();
@@ -358,9 +359,15 @@ function totalPriceList(totalItem) {
 function showSideBar(){
   const openSideBar = document.querySelector('.sideBar');
   openSideBar.style.display = "flex";
+  // openSideBar.style.transitionDuration = "4s"
+  displayBagItemIconCount();
+  
 }
+
 function closeSideBar(){
-  const openSideBar = document.querySelector('.sideBar');
-  openSideBar.style.display = "none";
+  const hideSideBar = document.querySelector('.sideBar');
+  hideSideBar.style.display = "none";
+  // hideSideBar.style.transitionDuration = "4s"
+  displayBagItemIconCount();
 }
 
