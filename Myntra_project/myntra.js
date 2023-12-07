@@ -372,17 +372,18 @@ function totalPriceList(totalItem) {
 function showSideBar(){
   const openSideBar = document.querySelector('.sideBar');
   openSideBar.style.display = "flex";
-  // openSideBar.style.transitionDuration = "4s"
-  displayBagItemIconCountMobile();
-  // whenPageLoad();
-  
+  const stopSlider = document.querySelector('.swiper-container');
+  stopSlider.style.display = "none";
+  const showDefaultBanner = document.querySelector('.bannerImage');
+  showDefaultBanner.style.display = "flex";
 }
 
 function closeSideBar(){
   const hideSideBar = document.querySelector('.sideBar');
   hideSideBar.style.display = "none";
-  // hideSideBar.style.transitionDuration = "4s"
-  displayBagItemIconCountMobile();;
-  // whenPageLoad();
+  const resumeSlider = document.querySelector('.swiper-container');
+  resumeSlider.style.display = "flex";
+  const showDefaultBanner = document.querySelector('.bannerImage');
+  showDefaultBanner.style.display = "none";
 }
 

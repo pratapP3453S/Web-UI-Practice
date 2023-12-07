@@ -231,7 +231,10 @@ header{
   .searchArea{
     flex-grow: 1;
   }
-  .swiper-container{
+  /* .swiper-container{
+    display: none;
+  } */
+  .bannerImage{
     display: none;
   }
   .containsMenuIcon{
@@ -251,6 +254,9 @@ header{
   .logoOnSmallScreen{
     display: flex;
     padding: 0 20px;
+  }
+  .bannerImage{
+    display: none;
   }
   .myntraLogo{
     height: 40px;
