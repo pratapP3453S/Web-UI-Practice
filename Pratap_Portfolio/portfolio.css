@@ -5,36 +5,388 @@
     font-family: 'poppins' ,sans-serif;
 }
 body{
-    color: #ededed;
+    background-color: rgb(20, 20, 50);
 }
+
+/* header */
 .header{
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: sticky;
     width: 100%;
-    padding: 20px 10%;
-    background: transparent;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+    flex-wrap: wrap;
+    background: transparent;
+    /* background-color: black; */
+    padding-bottom: 20px;
 }
 .logo{
-    position: relative;
-    font-size: 25px;
-    color: #fff;
+    margin-top: 2%;
+    margin-left: 4.5%;
+    font-size: 44px;
     text-decoration: none;
-    font-weight: 600;
+    letter-spacing: 0.1ch;
+    font-weight: 700;
+    color: #ededed;
+    opacity: 0;
+    transition: all .5s ease;
+    animation: logo 1s ease 1 forwards;
+}
+.logo:hover{
+    font-size: 55px;
+    text-shadow: 20px 20px 100px rgb(0, 255, 295),
+    20px -20px 100px rgb(0, 255, 295),
+    -20px 20px 100px rgb(0, 255, 295),
+    -20px -20px 100px rgb(0, 255, 295);
+}
+@keyframes logo {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.navBar{
+    margin-right: 10%;
+    margin-top: 2.3%;
+    word-spacing: 1cm;
+    /* opacity: 1; */
+    /* animation: navbar 1s ease forwards .3s; */
 }
 .navBar a{
-    display: inline-block;
-    font-size: 25px;
-    color: #fff;
-    font-weight: 500;
+    padding: 0 10px;
     text-decoration: none;
-    margin-left: 35px;
-    transition: .3s;
+    font-size: 28px;
+    letter-spacing: .1em;
+    font-weight: 600;
+    color: #ededed;
+    transition: all .5s linear;  
+    animation: fromUpMenu .5s ease forwards;
+    animation-delay: calc(.1s * var(--i));
+    opacity: 0;
+}
+@keyframes fromUpMenu{
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 .navBar a:hover{
-    color: #0ef;
+    font-size: 35px;
+    text-shadow: 10px 10px 50px rgb(0, 255, 295),
+    10px -10px 50px rgb(0, 255, 295),
+    -10px 10px 50px rgb(0, 255, 295),
+    -10px -10px 50px rgb(0, 255, 295);
+
+}
+
+.menuIcon{
+    color: black;
+    margin-top: 3%;
+    margin-right: 5%;
+    display: none;
+    cursor: pointer;
+    color: #ededed;
+}
+.menuContainer{
+    position: fixed;
+    right: 0;
+    display: none;
+    flex-wrap: wrap;
+    /* z-index: 1; */
+    flex-direction: column;
+    height: 100vh;
+    width: 45%;
+    backdrop-filter: blur(15px);
+    background-color: rgba(4, 4, 54, 0.37);
+}
+.menuContainer a, .closeMenuIcon{
+    display: flex;
+    margin-left: 7%;
+    margin-top: 7%;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: 700;
+    z-index: 2;
+    color: #ededed;  
+    transition: all .5s linear; 
+    animation: openSideBar 2s linear backwards;
+}
+
+
+.menuContainer a:hover, .closeMenuIcon:hover{
+    font-size: 35px;
+    text-shadow: 10px 10px 50px rgb(0, 255, 295),
+    10px -10px 50px rgb(0, 255, 295),
+    -10px 10px 50px rgb(0, 255, 295),
+    -10px -10px 50px rgb(0, 255, 295);
+    
+}
+.menuContainer{
+    /* box-shadow: -20px 0 80px rgba(0, 0, 0, 0.785); */
+    box-shadow: 0 0 5px cyan,0 0 25px cyan,0 0 50px cyan,0 0 100px cyan;
+    animation: openSideMenu .3s linear .2s forwards;
+    animation-delay: calc(.1s * var(--i));
+    opacity: 0;
+}
+@keyframes openSideMenu {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.closeMenuIcon{
+    padding: 15px 0;
+}
+.closeMenuIcon span{
+    cursor: pointer;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+@media (max-width: 1222px){
+    .logo{
+        font-size: 37px;
+        margin-top: 3%;
+    }
+    .navBar{
+        display: none;
+    }
+    .menuIcon{
+        display: flex;
+    }
+    .menuIcon span{
+        font-size: 40px;
+        font-weight: 800;
+    }
+    .menuContainer{
+        display: none;
+    }
+    .navBar{
+        margin-top: 4.5%;
+    }
+}
+
+
+/* body */
+
+.photoContainer, .myPhoto{
+    height: 650px;
+    width: 650px;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: rgb(8, 165, 165);
+    box-shadow: 50px 50px 500px rgb(0, 255, 295),
+    50px -50px 500px rgb(0, 255, 295),
+    -50px 50px 500px rgb(0, 255, 295),
+    -50px -50px 500px rgb(0, 255, 295);
+    animation: image 1s linear .3s forwards;
+    opacity: 0;
+}
+@keyframes image {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+.myPhoto{
+    padding: 20px;
+    border: 6px solid white;
+    box-shadow: inset 7px 7px 10px rgb(237, 0, 79),
+    inset -7px -7px 10px rgb(237, 0, 79);
+    opacity: 0;
+}
+
+
+.homeContent{
+    display: flex;
+    z-index: -1;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    align-items: center;
+    margin: 4.5% 10%;
+}
+@media(max-width: 1222px){
+    .photoContainer, .myPhoto{
+        height: 500px;
+        width: 500px;
+    }
+}
+@media (max-width: 999px){
+    .photoContainer, .myPhoto{
+        height: 450px;
+        width: 450px;
+    }
+}
+@media (max-width: 768px){
+    .photoContainer, .myPhoto{
+        height: 350px;
+        width: 350px;
+    }
+    .logo{
+        font-size: 30px;
+    }
+    .homeContent{
+        padding: 20px 0;
+        justify-content: center;
+        flex-wrap: wrap-reverse;
+    }
+    .homeInfo{
+        font-size: 15px;
+        text-align: center;
+    }
+    .contactIcons{
+        margin-left: 10%;
+    }
+}
+@media (max-width: 500px){
+    .photoContainer, .myPhoto{
+        height: 250px;
+        width: 250px;
+    }
+    .homeInfo{
+        font-size: 10px;
+        text-align: center;
+    }
+    
+}
+.homeInfo{
+    color: #ededed;
+    font-weight: 700;
+}
+.firstText{
+    font-size: 1.9em;
+    line-height: 1.45cm;
+    opacity: 0;
+    animation: fromUp 1s ease forwards .3s;
+}
+@keyframes fromUp{
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.name{
+    font-size: 3.3em;
+    line-height: 1.45cm;
+    opacity: 0;
+    animation: fromLeft 1s ease forwards .3s;
+}
+@keyframes fromLeft{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.profession{
+    font-size: 2.2em;
+    line-height: 1.45cm;
+    padding-bottom: 10px;
+    opacity: 0;
+    animation: fromUp 1s ease forwards .3s;
+}
+
+.paragraph{
+    font-size: 1.3em;
+    line-height: .8cm;
+    opacity: 0;
+    animation: fromDown 1s ease forwards .3s;
+}
+@keyframes fromDown{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.contactIcons a{
+    color: cyan;
+    border: 2px solid cyan;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: inline-flex;
+    background: transparent;
+    color: cyan;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: all .5s linear;
+    animation: fromRight .5s ease forwards;
+    animation-delay: calc(.1s * var(--i));
+    opacity: 0;
+}
+@keyframes fromRight{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.contactIcons a:hover{
+    background: #0ef;
+    color: black;
+    box-shadow: 0 0 20px #0ef;
+    width: 50px;
+    height: 50px;
+}
+.moreAbout{
+    display: inline-flex;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: black;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all .5s linear;
+    opacity: 0;
+    animation: fromDownButton 1s linear forwards .3s;
+}
+@keyframes fromDownButton {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.moreAbout:hover{
+    box-shadow: 0 0 5px cyan,0 0 25px cyan,0 0 50px cyan,0 0 100px cyan; 
 }

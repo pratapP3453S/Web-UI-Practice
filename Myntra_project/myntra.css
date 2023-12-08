@@ -152,7 +152,18 @@ header{
   
   padding-right: 30px;
   padding-top: 30px;
+  animation: openSideMenu .3s ease  forwards;
+@keyframes openSideMenu {
+  0%{
+      transform: translateX(-900px);
+      /* opacity: 0; */
+  }
+  100%{
+      transform: translateX(0px);
+      /* opacity: 1; */
+  }
 }
+
 .sideBar a{
   width: 100%;
   text-decoration: none;
@@ -184,6 +195,7 @@ header{
 .closeIconMenu, .menuBar:hover {
   background-color: rgb(240, 196, 203);
 }
+
 .sideBarNavUL li{
   display: flex;
   flex-direction: column;
