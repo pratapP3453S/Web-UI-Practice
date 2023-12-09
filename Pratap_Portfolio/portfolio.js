@@ -13,3 +13,22 @@ function rotateCloseIcon(){
     let closeMenu = document.querySelector('.menuContainer');
     closeMenu.style.display = "none";
 }
+
+function showDetails(inp){
+    let write = document.querySelector('.contactInfo');
+    if(inp == 1){ 
+        write.innerText = 'pratap ka facebook id';
+    }
+    else if(inp == 2){
+        write.innerText = 'pratap ka insta id';
+    }
+    else if(inp == 3){
+        write.innerText = 'pratap ka twitter';
+    }
+    else if(inp == 4){
+        write.innerText = 'pratap ka whatsapp number';
+    }
+    else{
+        write.innerText = '';
+    }
+}
