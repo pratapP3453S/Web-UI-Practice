@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More About Me</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="moreInfo.css">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header class="header">
+        <a href="portfolio.html" class="logo">PORTFOLIO.</a>
+        <nav class="navBar">
+            <a href="#" style="--i:1">Home</a>
+            <a href="#" style="--i:2">About</a>
+            <a href="#" style="--i:3">Skill</a>
+            <a href="#" style="--i:4">Portfolio</a>
+            <a href="#" style="--i:5">Contact</a>
+        </nav>
+        <nav class="menuIcon">
+            <span class="material-symbols-outlined" onclick="rotateBarIcon();" class="rotateShowIcon">
+                menu
+            </span>
+        </nav>
+        <nav class="menuContainer">
+            <div class="closeMenuIcon">
+                <span class="material-symbols-outlined" onclick="rotateCloseIcon();" class="rotateCloseIcon">
+                    close
+                </span>
+            </div>
+            <a href="#" style="--i:6">Home</a>
+            <a href="#" style="--i:7">About</a>
+            <a href="#" style="--i:8">Skill</a>
+            <a href="#" style="--i:9">Portfolio</a>
+            <a href="#" style="--i:10">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <!-- photoContainer2 -->
+        <div class="mainContainer">
+           <div class="mainInfoContainer">
+            <!-- <div class="containsImage"> -->
+                <div class="photoMoreInfo">
+                    <img src="./Pratap.jpg" alt="my photo" class="myPhotoMoreInfo">
+                <!-- </div> -->
+            </div>
+            <div class="aboutMeInfo">
+                <h1 style="text-align: center; line-height: 1.7cm;">About <span style="color: cyan;">Me</span></h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque velit animi perspiciatis labore harum deleniti facere nihil ut totam earum minus consequuntur, nostrum atque quo omnis non veritatis optio! Eaque provident error commodi ab excepturi voluptatum asperiores, veniam ad quidem laudantium adipisci quo iste quasi, harum id voluptate, architecto magnam cumque odio accusantium maiores modi repellat sed? Iusto sit ducimus nesciunt deserunt harum. Optio, dolorem minima ullam aspernatur mollitia debitis. Ipsam temporibus minus ut id consectetur! Rem, deserunt blanditiis accusamus quibusdam labore eveniet assumenda fugit aspernatur nobis nisi laboriosam, debitis incidunt sunt facere! Dicta, deserunt. Quibusdam, itaque sapiente laudantium cupiditate ipsum fugit error tenetur alias reiciendis, soluta quos dignissimos eligendi corporis est minima ipsa autem pariatur. Incidunt neque amet laboriosam sapiente ad iste aperiam magnam vitae velit reiciendis aut, dolorum doloribus quas atque quidem, laudantium voluptatem, odit libero in voluptatum. Porro voluptatum rem nihil quod iste? Voluptas harum soluta quisquam velit numquam officia obcaecati eos similique praesentium qui voluptatum, corporis sequi voluptatem architecto porro doloremque quidem consequuntur neque beatae reiciendis, non tempora? Cumque nihil deleniti nesciunt, fugit doloribus consequuntur dolorum incidunt. Molestiae nihil cumque rerum. Unde tempora consequuntur repudiandae accusantium aperiam ex! Quasi maiores dolores numquam, doloremque deserunt inventore rerum. Adipisci illo quo ducimus quidem, iusto necessitatibus at beatae minima. Corporis sint ab dolore recusandae autem ex natus rerum at velit a, architecto iste, illo pariatur, quam modi nulla consectetur necessitatibus? Possimus perferendis eaque laudantium blanditiis laborum modi ea asperiores, fugit iste, totam, veritatis velit sint veniam distinctio dolorum voluptatibus impedit qui excepturi. Laboriosam, nulla.</p> 
+            </div>
+           </div>
+            <div class="contactIcons contacts">
+                <a href="#" style="--i:11"><i class='bx bxl-facebook faceBook' onclick="showDetails(1);"></i></a>
+                <a href="#" style="--i:12"><i class='bx bxl-instagram' onclick="showDetails(2);"></i></a>
+                <a href="#" style="--i:13"><i class='bx bxl-twitter' onclick="showDetails(3);"></i></a>
+                <a href="#" style="--i:14"><i class='bx bxl-whatsapp' onclick="showDetails(4);"></i></a>
+            </div>
+            <div class="contactInfo">
+                <h2></h2>
+                <h2></h2>
+                <h2></h2>
+                <h2></h2>
+            </div>
+        </div>
+        <div class="goBack">
+            <a href="portfolio.html" class="moreAbout goHome" >Go Back</a>
+        </div>
+    </main>
+</body>
+<script src="portfolio.js"></script>
+</html>
