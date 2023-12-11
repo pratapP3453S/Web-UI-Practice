@@ -10,7 +10,10 @@ body{
 
 /* header */
 .header{
-    position: sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -18,6 +21,9 @@ body{
     background: transparent;
     background-color: rgb(5, 5, 72);
     padding-bottom: 20px;
+}
+main{
+    margin-top: 11%;
 }
 .logo{
     margin-top: 2%;
@@ -49,6 +55,7 @@ body{
     }
 }
 .navBar{
+    /* position: sticky; */
     margin-right: 10%;
     margin-top: 2.3%;
     word-spacing: 1cm;
@@ -178,7 +185,6 @@ body{
     }
 }
 
-
 /* body */
 
 .photoContainer, .myPhoto{
@@ -187,10 +193,10 @@ body{
     border-radius: 50%;
     z-index: -1;
     background-color: rgb(8, 165, 165);
-    box-shadow: 50px 50px 500px rgb(0, 255, 295),
-    50px -50px 500px rgb(0, 255, 295),
-    -50px 50px 500px rgb(0, 255, 295),
-    -50px -50px 500px rgb(0, 255, 295);
+    box-shadow: 20px 20px 100px rgb(0, 255, 295),
+    20px -20px 100px rgb(0, 255, 295),
+    -20px 20px 100px rgb(0, 255, 295),
+    -20px -20px 100px rgb(0, 255, 295);
     animation: imageMoreInfo 1s linear .3s forwards;
     opacity: 0;
 }
@@ -456,7 +462,8 @@ body{
     line-height: 1.3cm;
     color: #ededed;
     margin: 10% 0;
-    background-color: rgba(0, 238, 255, 0.187);
+    /* background-color: rgba(0, 238, 255, 0.187); */
+    background-color: rgba(30, 132, 139, 0.205);
     backdrop-filter: blur(30px);
     box-shadow: 0 25px 30px cyan;
     animation: fromDownInfo 1s linear 1s forwards;
@@ -466,8 +473,9 @@ body{
     
 }
 .infoContainer:hover{
-    font-size: 2.4em;
+    /* font-size: 2.4em; */
     box-shadow: 0 -25px 30px cyan;
+    transform: scale(1.1);
 
 }
 @keyframes fromDownInfo {
@@ -564,7 +572,7 @@ body{
     box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
 }
 .read:hover{
-    box-shadow: 0 0 5px cyan,0 0 25px cyan,0 0 50px cyan,0 0 100px cyan; 
+    box-shadow: 0 0 5px cyan,0 0 25px cyan,0 0 50px cyan,0 0 100px cyan, 0 0 200px cyan; 
 }
 .servicesList div:hover{
     transform: translateY(-10px);
@@ -600,12 +608,12 @@ body{
     margin-top: 40px 0;
 }
 
-.technicalBar .bar:first-child{
+/* .technicalBar .bar:first-child{
     margin-top: 0;
 }
 .technicalBar .bar:last-child{
     margin-bottom: 0;
-}
+} */
 .technicalBar .bar .info{
     margin-bottom: 5px;
 
@@ -695,7 +703,7 @@ progress::-webkit-progress-bar{
 .progressLine.java span::after{
     content:"70%";
 }
-.progressLine span::before{
+/* .progressLine span::before{
     content: "";
     position: absolute;
     width: 0;
@@ -709,7 +717,7 @@ progress::-webkit-progress-bar{
     animation: showText 0.5s 1.5s linear forwards;
     opacity: 0;
 
-}
+} */
 @keyframes showText{
     100%{
         opacity: 1;
@@ -737,13 +745,14 @@ progress::-webkit-progress-bar{
     width: 120px;
     height: 160px;
 }
+
 .radialBars .radialBar .progressBar{
     stroke-width: 10;
     stop-color: black;
     fill: transparent;
-    stroke-dasharray: 502;
-    stroke-dashoffset: 502;
-    stroke-linecap: round;
+    /* stroke-dasharray: 502;
+    stroke-dashoffset: 502; */
+    /* stroke-linecap: round; */
     animation: animate-bar 1s linear forwards;
 }
 @keyframes animate-bar {
@@ -756,7 +765,7 @@ progress::-webkit-progress-bar{
     stroke: #0ef;
     fill: transparent;
     stroke-dasharray: 500;
-    stroke-dashoffset: 500;
+    stroke-dashoffset: 100;
     stroke-linecap: round;
 }
 .path1{animation: animatePath1 1s 1s linear forwards;}
@@ -806,11 +815,12 @@ progress::-webkit-progress-bar{
     font-weight: 500;
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
-}
+} 
 .section{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    gap: 50px;
 }
 
 .container1{
@@ -819,4 +829,210 @@ progress::-webkit-progress-bar{
     padding: 75px 90px;
     margin-left: 10px;
     color: white;
+}
+
+.main-text{
+    padding-top: 130px;
+    margin-top: 200px;
+}
+.main-text h2{
+    font-size: 60px;
+    line-height: 1;
+    text-align: center;
+    color: white;
+}
+.main-text h2 span{
+    color: #0ef;
+}
+.portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(359px, auto));
+}
+.row{
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.row img{
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(transparent,#0ef);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    transition: height 0.5s;
+}
+.layer h5{
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.layer p{
+    color: black;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+.layer i{
+    color: black;
+    margin-top: 20px;
+    font-size: 20px;
+    background: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.row:hover img{
+    transform: scale(1.1);
+}
+.row:hover .layer{
+    height: 100%;
+}
+
+.contact{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 3rem;
+    padding-left: 30px;
+    margin-top: 130px;
+}
+.contact-text h2{
+    font-size: 90px;
+    line-height: 1;
+    text-align: center;
+}
+
+.contact-text h2 span{
+    color: #0ef;
+}
+.contact-text h4{
+    margin: 15px 0;
+    color: rgb(228, 228, 228);
+    font-size: 20px;
+    font-weight: 600;
+}
+.contact-text p{
+    color: rgb(177, 177, 177);
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 2rem;
+}
+.contact-list{
+    margin-bottom: 10px;
+    color: white;
+}
+.contact-list li{
+    margin-bottom: 10px;
+    display: block;
+}
+.contact-list i{
+    display: inline-block;
+    color: #0ef;
+    font-size: 24px;
+    font-weight: 600;
+    transition: all .40s ease;
+}
+.contact-list li a:hover{
+    transform: scale(1.1) translateY(-5px);
+    color: #0ef;
+}
+.contact-icons i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: fromRight 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+.contact-icons i:hover{
+    background: #0ef;
+    color: black;
+    box-shadow: 0 0 20px #0ef;
+}
+.contact-form form{
+    position: relative;
+}
+.contact-form form input, form textarea{
+    border: none;
+    outline: none;
+    width: 90%;
+    padding: 18px;
+    /* background: #555557; */
+    background: #ededed90;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+.contact-form textarea{
+    resize: none;
+    height: 220px;
+}
+.contact-form form .send{
+    display: inline-block;
+    padding: 12px 20px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 18px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: fromDownButton 1s ease forwards;
+    animation-delay: 1.3s;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+.contact-form form .send:hover, .top i{
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan,0 0 50px cyan,
+    0 0 100px cyan,0 0 200px cyan; 
+}
+.last-text{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: rgb(7, 85, 91);
+    font-weight: 300;
+    margin-top: 70px;
+}
+.top{
+    position: fixed;
+    bottom: 2.1rem;
+    right: 2.1rem;
+}
+.top i{
+    color: black;
+    background: #0ef;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 0.5rem;
 }
