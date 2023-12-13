@@ -1011,6 +1011,12 @@ progress::-webkit-progress-bar{
     animation-delay: 1.3s;
     box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
 }
+@media (max-width: 768px){
+    .contact{
+        display: flex;
+        flex-direction: column;
+    }
+}
 .contact-form form .send:hover, .top i{
     box-shadow: 0 0 5px cyan,
     0 0 25px cyan,0 0 50px cyan,

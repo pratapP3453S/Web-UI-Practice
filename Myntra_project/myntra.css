@@ -82,6 +82,7 @@ header{
   background-color: #f5f5f6;
   border: 0;
   width: 100%;
+  outline: none;
   /* flex: 1; */
   height: 40px;
   border-radius: 0 4px 4px 0;
@@ -153,6 +154,7 @@ header{
   padding-right: 30px;
   padding-top: 30px;
   animation: openSideMenu .3s ease  forwards;
+ }
 @keyframes openSideMenu {
   0%{
       transform: translateX(-900px);
